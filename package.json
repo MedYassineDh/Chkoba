@@ -1,0 +1,25 @@
+{
+  "name": "chkobba-game-platform",
+  "version": "1.0.0",
+  "description": "Chkobba - Tunisian Card Game Platform with Real-Money Betting",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "start": "npm start -w backend",
+    "test": "npm test -w backend",
+    "lint": "npm run lint -w backend",
+    "setup": "npm install && npm install --prefix backend && npm install --prefix frontend",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up",
+    "docker:down": "docker-compose down"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
